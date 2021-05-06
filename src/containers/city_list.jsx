@@ -11,12 +11,14 @@ class CityList extends Component {
 
   render() {
     return (
-      <div className="col-md-4">
-        <ul className="list-group">
+      <div className="m-3 col-md-4">
+        <ul className="list-group bg-light">
           {
             this.props.cities.map((city) => {
               return (
-                <li className="list-group-item">{city.name}</li>
+                <a href="#" className="list-group-item list-group-item-action list-group-item-light">
+                  {city.name}
+                </a>
               );
             })
           }

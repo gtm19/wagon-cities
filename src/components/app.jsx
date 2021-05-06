@@ -11,7 +11,7 @@ const App = () => {
   return (
     <div className="app container-fluid">
       <CityList cities={cities} />
-      <div className="col-md-8"> {/* TODO: replace this with ActiveCity */}
+      <div className="m-3 col-md-8"> {/* TODO: replace this with ActiveCity */}
         Some more content
       </div>
     </div>
