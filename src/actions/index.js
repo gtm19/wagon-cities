@@ -1,8 +1,7 @@
 // TODO: add and export your own actions
 import cities from '../data/cities';
 
-const setCities = () => {
-
+export const setCities = () => {
   // In real life this would probably do some sort of API call
 
   return {
@@ -11,4 +10,6 @@ const setCities = () => {
   };
 };
 
-export { setCities };
+export const deleteMe = () => { // TODO: delete this function
+
+};
