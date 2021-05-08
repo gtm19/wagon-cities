@@ -31,7 +31,7 @@ class CityList extends Component {
         {
           this.props.cities.map((city) => {
             return (
-              <a className="city" href="#">
+              <a className="city" key={city.name} href="#">
                 {city.name}
               </a>
             );
