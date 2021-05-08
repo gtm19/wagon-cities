@@ -9,3 +9,10 @@ export const setCities = () => {
     payload: cities
   };
 };
+
+export const setActiveCity = (city) => {
+  return {
+    type: "SET_ACTIVE_CITY",
+    payload: city
+  };
+};
