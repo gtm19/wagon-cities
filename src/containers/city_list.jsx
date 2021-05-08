@@ -1,4 +1,8 @@
 import React, { Component } from "react";
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
+
+import { setCities } from "../actions";
 
 class CityList extends Component {
   static defaultProps = {
@@ -15,6 +19,10 @@ class CityList extends Component {
     this.state = {
       delete: "this" // TODO: delete thsis
     };
+  }
+
+  componentDidMount() {
+    this.props.setCities();
   }
 
   render() {
@@ -34,4 +42,17 @@ class CityList extends Component {
   }
 }
 
-export default CityList;
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators(
+    { setCities },
+    dispatch
+  );
+};
+
+const mapStateToProps = (state) => {
+  return {
+    cities: state.cities
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(CityList);

@@ -9,7 +9,3 @@ export const setCities = () => {
     payload: cities
   };
 };
-
-export const deleteMe = () => { // TODO: delete this function
-
-};

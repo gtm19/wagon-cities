@@ -3,9 +3,9 @@ import CityList from "../containers/city_list";
 
 const App = () => {
   return (
-    <div className="app container-fluid">
+    <div className="app">
       <CityList />
-      <div className="m-3 col-md-8"> {/* TODO: replace this with ActiveCity */}
+      <div className="active-city"> {/* TODO: replace this with ActiveCity */}
         Some more content
       </div>
     </div>
