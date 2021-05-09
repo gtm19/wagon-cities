@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 
+import City from "./city";
 import { setCities } from "../actions";
 
 class CityList extends Component {
@@ -30,11 +31,7 @@ class CityList extends Component {
       <div className="cities">
         {
           this.props.cities.map((city) => {
-            return (
-              <a className="city" key={city.name} href="#">
-                {city.name}
-              </a>
-            );
+            return <City city={city} key={city.name} />;
           })
         }
       </div>

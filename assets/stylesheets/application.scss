@@ -13,14 +13,15 @@ $radius: 8px;
   display: flex;
   .cities {
     width: 30%;
-    .city {
-      &:first-child {
-        border-radius: $radius $radius 0 0;
-      }
+    div:first-child > a {
+      border-radius: $radius $radius 0 0;
+    }
 
-      &:last-child {
-        border-radius: 0 0 $radius $radius;
-      }
+    div:last-child > a {
+      border-radius: 0 0 $radius $radius;
+    }
+
+    .city {
 
       &:hover {
         background: rgba($color: $white, $alpha: 0.1);
