@@ -1,12 +1,6 @@
 import React, { Component } from 'react'
-import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
-
 class ActiveCity extends Component {
-  static defaultProps = {
-    activeCity: { name: 'London', address: '14-22 Elder St, London E1 6BT', slug: 'london' }
-  };
-
   render() {
     const { activeCity } = this.props;
     const url = `https://www.lewagon.com/api/v1/cities/${activeCity.slug}/cover?width=900`;
@@ -21,4 +15,10 @@ class ActiveCity extends Component {
   }
 }
 
-export default ActiveCity;
+const mapStateToProps = (state) => {
+  return {
+    activeCity: state.activeCity
+  };
+};
+
+export default connect(mapStateToProps)(ActiveCity);

@@ -6,15 +6,34 @@ import { setActiveCity } from "../actions/index";
 
 class City extends Component {
   render() {
-    const { city } = this.props;
+    const { city, activeCity } = this.props;
+    let classes = "city list-group-item";
+
+    if (city === activeCity) {
+      classes += " selected";
+    }
+
     return (
-      <div>
-        <a className="city" key={city.name} href="#">
+      <div onClick={() => this.props.setActiveCity(city)}>
+        <li className={classes} key={city.name}>
           {city.name}
-        </a>
+        </li>
       </div>
     )
   }
 };
 
-export default City;
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators(
+    { setActiveCity },
+    dispatch
+  );
+};
+
+const mapStateToProps = (state) => {
+  return {
+    activeCity: state.activeCity
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(City);

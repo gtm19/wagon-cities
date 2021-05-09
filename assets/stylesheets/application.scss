@@ -13,11 +13,11 @@ $radius: 8px;
   display: flex;
   .cities {
     width: 30%;
-    div:first-child > a {
+    div:first-child > li {
       border-radius: $radius $radius 0 0;
     }
 
-    div:last-child > a {
+    div:last-child > li {
       border-radius: 0 0 $radius $radius;
     }
 
@@ -35,6 +35,11 @@ $radius: 8px;
       outline-offset: -1px;
     }
   }
+
+  .selected {
+    background: rgba($color: $white, $alpha: 0.1);
+  }
+
   .active-city {
     position: fixed;
     right: 20px;
