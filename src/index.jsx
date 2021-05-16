@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { logger } from 'redux-logger';
+import reduxPromise from 'redux-promise';
 
 // internal modules
 import App from './components/app';
@@ -14,7 +15,7 @@ import citiesReducer from './reducers/cities_reducer';
 import activeCityReducer from './reducers/active_city_reducer';
 
 // Middleware
-const middleware = applyMiddleware(logger);
+const middleware = applyMiddleware(logger, reduxPromise);
 
 const reducers = combineReducers({
   cities: citiesReducer,

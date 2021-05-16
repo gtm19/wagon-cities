@@ -2,13 +2,14 @@
 import cities from '../data/cities';
 
 export const setCities = () => {
-  // In real life this would probably do some sort of API call
-  const sortedCities = cities.sort((a, b) => ((a.name > b.name) ? 1 : -1));
-
-  return {
-    type: "SET_CITIES",
-    payload: sortedCities
-  };
+  return fetch("https://raw.githubusercontent.com/gtm19/wagon-cities/main/src/data/cities.json")
+    .then(response => response.json())
+    .then((data) => {
+      return {
+        type: "SET_CITIES",
+        payload: data.sort((a, b) => ((a.name > b.name) ? 1 : -1))
+      };
+    });
 };
 
 export const setActiveCity = (city) => {
