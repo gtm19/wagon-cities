@@ -17,6 +17,7 @@ import activeCityReducer from './reducers/active_city_reducer';
 // Middleware
 const middleware = applyMiddleware(logger, reduxPromise);
 
+// Combine the reducers
 const reducers = combineReducers({
   cities: citiesReducer,
   activeCity: activeCityReducer
